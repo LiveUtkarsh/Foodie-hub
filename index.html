@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie Hub - Online Ordering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <div id="splash-screen">
+    <h1>🍴 Foodie Hub 🍴</h1>
+    <p>Loading delicious food... 🚀</p>
+  </div>
+
+  
+  <div id="checkout-animation">
+    <p id="checkout-status" class="status-text">Processing Payment...</p>
+    <div class="progress-bar"><div class="progress"></div></div>
+  </div>
+
+  
+  <div id="delivery-animation">
+    <p id="delivery-status" class="status-text">Preparing your order...</p>
+    <div class="progress-bar"><div class="progress"></div></div>
+  </div>
+
+  
+  <header>
+    <div><strong>Foodie Hub</strong></div>
+    <nav>
+      <a href="#" onclick="showPage('landing')">Home</a>
+      <a href="#" onclick="showPage('menu')">Menu</a>
+      <a href="#" onclick="showPage('cart')">Cart (<span id="cart-count">0</span>)</a>
+      <a href="#" onclick="showPage('history')">Orders</a>
+      <a href="#" onclick="showPage('profile')">Profile</a>
+      <a href="#" onclick="showPage('login')">Login</a>
+      <button id="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+    </nav>
+  </header>
+
+  <section id="landing" class="page">
+    <h1>Welcome to Foodie Hub</h1>
+    <p>Delicious food delivered only in Kanpur! 🍕🍔🍟</p>
+    <button onclick="checkLocation()">Start Ordering</button>
+  </section>
+
+  
+  <section id="menu" class="page">
+    <h2>Our Menu</h2>
+    <div id="food-list"></div>
+  </section>
+
+  
+  <section id="cart" class="page">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <button onclick="checkout()">Proceed to Checkout</button>
+  </section>
+
+  
+  <section id="checkout" class="page">
+    <h2>Checkout</h2>
+    <p id="checkout-summary"></p>
+    <textarea id="address" placeholder="Delivery Address"></textarea><br><br>
+    <h3>Payment Method:</h3>
+    <label><input type="radio" name="payment" value="Cash on Delivery" checked> Cash on Delivery</label><br>
+    <label><input type="radio" name="payment" value="Online Payment"> Online Payment</label><br><br>
+    <button onclick="placeOrder()">Place Order</button>
+  </section>
+
+  
+  <section id="history" class="page">
+    <h2>Past Orders</h2>
+    <div id="history-list"></div>
+  </section>
+
+  
+  <section id="profile" class="page">
+    <h2>Your Profile</h2>
+    <div id="profile-info"></div>
+    <button onclick="logout()">Logout</button>
+  </section>
+
+  
+  <section id="login" class="page">
+    <h2>Login</h2>
+    <input type="text" id="loginName" placeholder="Name"><br><br>
+    <input type="text" id="loginMobile" placeholder="Mobile"><br><br>
+    <button onclick="doLogin()">Login</button>
+  </section>
+
+  <button id="goto-cart-btn" onclick="showPage('cart')">Go to Cart</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
